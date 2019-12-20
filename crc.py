@@ -1,3 +1,8 @@
+# Easy Checksum Calculator - by Paolo Miniussi - settembre 2019 - p.miniussi@alfa-a.it
+# This script helps to verify the HEX checksum
+# Powered for Frampi Poroject
+
+
 x = input("Inserisci Stringa:")
 y = (x[2:-2]) #taglio ad x i primi e gli utlimi due caratteri della stringa
 s = 2 # creo un dividendo
@@ -7,8 +12,8 @@ f = sum(w) #sommo gli elementi della lista
 M = (x[-2:]) #creo una stringa isolando gli ultimi due caratteri di CRC
 K = [int(M, 16)] #converto la stringa HEX isolata e la converto in decimale
 g = (hex(f)[-2:]) ## converto la somma in HEX
-print(g, "VALORE DI CONTROLLO", g.lower())
-print(M, "VALORE DI RISCONTRO", M.lower())
+print(g, "VALORE DI CONTROLLO", g.lower()) #porto tutti i valori di g in minuscolo
+print(M, "VALORE DI RISCONTRO", M.lower()) #come sopra ma con M
 print(x) #ristampo la stringa iniziale
 if g.lower() == M.lower(): #se il valore di g(trasformato minuscolo) e M (trasformato minuscolo) è lo stesso allora 
     print("CRC VERIFICATO") #stampa 
